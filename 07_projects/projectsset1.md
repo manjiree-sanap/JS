@@ -8,7 +8,7 @@
 
 ##project 1
 
-'''javascript
+```javascript
 
 
 
@@ -45,20 +45,20 @@ butttons.forEach(function(button){
 
 
 
-'''
+```
 
 
 
 #project 2 solution 
 
-'''javascript
+```javascript
 const form= document.querySelector('form');
 
 //this usecase will give you empty 
 
 //const height = parseInt(document.querySelector('#height').value);
 
-form.addEventListener('submit',function(e){
+form.addEventListener(`submit`,function(e){
   e.preventDefault();
 
   const height= parseInt(document.querySelector('#height').value);
@@ -69,19 +69,37 @@ form.addEventListener('submit',function(e){
 
   if(height === '' || height < 0|| isNaN(height)) {
    
-    results.innerHTML = 'please give valid height ${height}';
+    results.innerHTML = `please give valid height ${height}`;
   }
   else 
   if(weigth === '' || weigth < 0|| isNaN(weigth)) {
    
-    results.innerHTML = 'please give valid weigth ${weigth}';
+    results.innerHTML = `please give valid weigth ${weigth}`;
 
   }else
   {
     const bmi = (weigth/ ((height*height)/10000)).toFixed(2);
 
     //show the result
-    results.innerHTML= '<span>${bmi}</span>';
+    results.innerHTML= `<span>${bmi}</span>`;
   }
 });
+
+```
+
+##project 3 solution
+```javascript
+const clock = document.getElementById('clock');
+//const clock = document.querySelector('#clock')
+
+
+setInterval(function(){
+  let date = new Date();
+  //console.log(date.toLocalTimeString());
+  clock.innerHTML= date.toLocaleTimeString();
+},1000);
+
+
+
+```
 
